@@ -1,9 +1,9 @@
-title: Hacker-Blog
-description: "A Jekyll Blog Theme For Hackers"
+title: .svf
+description: "UNIXy Things I Do Not Want to Forget"
 author:
-  name: "SomeHacker"
-  email: "someone@somewebsite.somedomain"
-  url: "https://ashishchaudhary.in/hacker-blog"
+  name: "svf"
+  email: "scott.fallin [at] gmail.com"
+  url: "https://scottvraneshfallin.com"
 
 baseurl: /
 
@@ -28,5 +28,5 @@ plugins:
   - jekyll-sitemap
 
 # Custom variables
-owner : "SomeHacker"
+owner : "Scott Vranesh-Fallin"
 year : "2020"

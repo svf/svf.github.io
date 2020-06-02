@@ -1,118 +1,114 @@
-# Hyde
+# The Hacker-Blog theme
 
-Hyde is a brazen two-column [Jekyll](http://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
+*Hacker-Blog is a minimalistic, responsive jekyll theme built for hackers. It is based on the [hacker theme](https://github.com/pages-themes/hacker) for project pages.*
 
-![Hyde screenshot](https://f.cloud.github.com/assets/98681/1831228/42af6c6a-7384-11e3-98fb-e0b923ee0468.png)
+Demo: [https://ashishchaudhary.in/hacker-blog](https://ashishchaudhary.in/hacker-blog)
 
+### Included
 
-## Contents
-
-- [Usage](#usage)
-- [Options](#options)
-  - [Sidebar menu](#sidebar-menu)
-  - [Sticky sidebar content](#sticky-sidebar-content)
-  - [Themes](#themes)
-  - [Reverse layout](#reverse-layout)
-- [Development](#development)
-- [Author](#author)
-- [License](#license)
-
+1. Pagination
+2. SEO tags
+3. Archive Page
+4. About Page
+5. RSS (`https://base-url/atom`)
+6. Sitemap (`https://base-url/sitemap`)
+7. Google Analytics (optional)
 
 ## Usage
 
-Hyde is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
+1. Fork and Clone this repository
+2. Customize your blog
+3. Add a new post in `_posts/` directory with proper name format (as shown in placeholder posts)
+4. Commit and push to master on a repository named `<githubusername.github.io>`.
+5. Visit `<githubusername>.github.io`
 
+## Local Build
 
-## Options
+If you want to see the changes before pushing the blog to Github, do a local build.
 
-Hyde includes some customizable options, typically applied via classes on the `<body>` element.
+1. [`gem install jekyll`](https://jekyllrb.com/docs/installation/#install-with-rubygems)
+2. `gem install jekyll-seo-tag`
+3. `gem install jekyll-paginate`
+4. `gem install jekyll-sitemap`
+5. (`cd` to the blog directory, then:) `jekyll serve --watch --port 8000`
+6. Go to `http://0.0.0.0:8000/` in your web browser.
 
+*Note: In case you have set a `baseurl` different than `/` in `_config.yml`, go to `http://0.0.0.0:8000/BASEURL/` instead.*
 
-### Sidebar menu
+### Local build using docker
 
-Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](http://jekyllrb.com/docs/frontmatter/).
-
-```
----
-layout: page
-title: About
----
-```
-
-**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
-
-
-### Sticky sidebar content
-
-By default Hyde ships with a sidebar that affixes it's content to the bottom of the sidebar. You can optionally disable this by removing the `.sidebar-sticky` class from the sidebar's `.container`. Sidebar content will then normally flow from top to bottom.
-
-```html
-<!-- Default sidebar -->
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    ...
-  </div>
-</div>
-
-<!-- Modified sidebar -->
-<div class="sidebar">
-  <div class="container">
-    ...
-  </div>
-</div>
+```bash
+docker run --rm -p 8000:8000 \
+  --volume="LOCATION_OF_YOUR_JEKYLL_BLOG:/srv/jekyll" \
+  -it tocttou/jekyll:3.5 \
+  jekyll serve --watch --port 8000
 ```
 
+Replace `LOCATION_OF_YOUR_JEKYLL_BLOG` with the full path of your blog repository. Visit `http://localhost:8000/` to access the blog.
 
-### Themes
+*Note: In case you have set a `baseurl` different than `/` in `_config.yml`, go to `http://0.0.0.0:8000/BASEURL/` instead.*
 
-Hyde ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
+## Customizing
 
-![Hyde in red](https://f.cloud.github.com/assets/98681/1831229/42b0b354-7384-11e3-8462-31b8df193fe5.png)
+### Configuration variables
 
-There are eight themes available at this time.
+Edit the `_config.yml` file and set the following variables:
 
-![Hyde theme classes](https://f.cloud.github.com/assets/98681/1817044/e5b0ec06-6f68-11e3-83d7-acd1942797a1.png)
+```yml
+title: [The title of your blog]
+description: [A short description of your blog's purpose]
+author:
+  name: [Your name]
+  email: [Your email address]
+  url: [URL of your website]
 
-To use a theme, add anyone of the available theme classes to the `<body>` element in the `default.html` layout, like so:
+baseurl: [The base url for this blog.]
 
-```html
-<body class="theme-base-08">
-  ...
-</body>
+paginate: [Number of posts in one paginated section (default: 3)]
+owner: [Your name]
+year: [Current Year]
 ```
 
-To create your own theme, look to the Themes section of [included CSS file](https://github.com/poole/hyde/blob/master/public/css/hyde.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
+*Note: All links in the site are prepended with `baseurl`. Default `baseurl` is `/`. Any other baseurl can be setup like `baseurl: /hacker-blog`, which makes the site available at `http://domain.name/hacker-blog`.*
 
-### Reverse layout
+Additionally, you may choose to set the following optional variables:
 
-![Hyde with reverse layout](https://f.cloud.github.com/assets/98681/1831230/42b0d3ac-7384-11e3-8d54-2065afd03f9e.png)
-
-Hyde's page orientation can be reversed with a single class.
-
-```html
-<body class="layout-reverse">
-  ...
-</body>
+```yml
+google_analytics: [Your Google Analytics tracking ID]
 ```
 
+### About Page
 
-## Development
+Edit `about.md`
 
-Hyde has two branches, but only one is used for active development.
+### Layout
 
-- `master` for development.  **All pull requests should be submitted against `master`.**
-- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
+If you would like to modify the site style:
 
+**HTML**
 
-## Author
+Footer: Edit `_includes/footer.html`
 
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
+Header: Edit `_includes/header.html`
 
+Links in the header: Edit `_includes/links.html`
+
+Meta tags, blog title display, and additional CSS: Edit `_includes/head.html`
+
+Index page layout: Edit `_layouts/default.html`
+
+Post layout: Edit `_layouts/post.html`
+
+**CSS**
+
+Site wide CSS: Edit `_sass/base.scss`
+
+Custom CSS: Make `_sass/custom.scss` and use it. Then add `@import "custom";` to `css/main.scss`
+
+**404 page**
+
+Edit `404.md`
 
 ## License
 
-Open sourced under the [MIT license](LICENSE.md).
-
-<3
+CC0 1.0 Universal

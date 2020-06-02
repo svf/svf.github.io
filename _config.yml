@@ -9,12 +9,12 @@ permalink:        pretty
 title:            .svf
 tagline:          'A Personal Website'
 description:      ''
-url:              http://hyde.getpoole.com
+url:              https://scottvraneshfallin.com"
 baseurl:          /
 
 author:
   name:           'Scott Vranesh-Fallin'
-  url:            https://twitter.com/allhandsmad
+  url:            https://scottvraneshfallin.com"
 
 paginate:         5
 

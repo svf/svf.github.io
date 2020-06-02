@@ -8,18 +8,18 @@ permalink:        pretty
 # Setup
 title:            .svf
 tagline:          'A Personal Website'
-description:      ''
-url:              https://scottvraneshfallin.com"
+description:      "just another guy\'s website"
+url:              https://scottvraneshfallin.com
 baseurl:          /
 
 author:
   name:           'Scott Vranesh-Fallin'
-  url:            https://scottvraneshfallin.com"
+  url:            https://scottvraneshfallin.com
 
 paginate:         5
 
 # Custom vars
-version:          0.1.0
+version:          0.1.1
 
 github:
   repo:           https://github.com/svf/svf.github.io

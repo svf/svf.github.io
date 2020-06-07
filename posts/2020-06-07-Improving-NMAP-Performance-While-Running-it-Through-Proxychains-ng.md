@@ -7,7 +7,7 @@ layout: default
 Traditionally, one would run nmpa through Proxychains-ng (or the original Proxychains) like so:
 
 ```
-proxychains nmap -p 1-1000 -sT -Pn --open -n -T4 --min-parallelism 100 --min-rate 1 --oG proxychains_nmap_old --append-output <IP Address>
+proxychains4 nmap -p 1-1000 -sT -Pn --open -n -T4 --min-parallelism 100 --min-rate 1 --oG proxychains_nmap_old --append-output <IP Address>
 ```
 
 One can increase performance and quicken the scan by utilizing xargs to scan ports 1 through 1000 inclusively, like so:

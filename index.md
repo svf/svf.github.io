@@ -9,3 +9,4 @@ layout: default
 [Link to Hello, World page](./posts/helloworld.html).
 
 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+![Octocat](assets/images/GitHub-Mark-32px.png)

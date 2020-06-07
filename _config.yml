@@ -17,7 +17,7 @@ title: svf's tech blog
 name: svf's tech blog
 description: 
 baseurl: "" # the subpath of your site, e.g. /blog
-github_username:  alainpham
+github_username: svf
 
 # jekyll-paginate configuration
 paginate: 10

@@ -9,7 +9,6 @@ The default proxychains-ng binary in [Homebrew](https://brew.sh) didn't work for
 ```bash
 brew uninstall proxychains-ng
 
-```bash
 brew install proxychains-ng -s
 
 Where the -s tells brew to compile from source.

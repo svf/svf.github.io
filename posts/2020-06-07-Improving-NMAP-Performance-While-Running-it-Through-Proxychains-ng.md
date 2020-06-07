@@ -22,4 +22,11 @@ And here's a similar method, using xargs to nmap scan a handful of ports on an e
 seq 1 254 | xargs -P 50 -I{} proxychains4 nmap -p 80,443,3389,445,22 -sT -Pn --open -n -T4 --min-parallelism 100 --min-rate 1 --oG proxychains_nmap --append-output 192.168.1.{}
 ```
 
+After that, its just a matter of grep in for any open TCP ports in your output file:
+
+```
+grep open/tcp proxychains-nmap
+```
+
+
 [back](/)

@@ -4,9 +4,9 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](posts/anonther-page.html).
+[Link to another page](posts/another-page.html).
 
-[Link to another page](./posts/helloworld.html).
+[Link to Hello, World page](./posts/helloworld.html).
 
 There should be whitespace between paragraphs.
 

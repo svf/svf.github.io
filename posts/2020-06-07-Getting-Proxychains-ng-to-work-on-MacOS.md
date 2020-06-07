@@ -6,7 +6,7 @@ layout: default
 
 The default proxychains-ng binary in [Homebrew](https://brew.sh) didn't work for me. I found that by removing it and then telling [Homebrew] to compile from source, I was able to run arbitrary applications through a chain of proxies.
 
-```bash
+```sh
 brew uninstall proxychains-ng
 
 brew install proxychains-ng -s

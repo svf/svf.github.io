@@ -8,10 +8,10 @@ title: 2020-06-07-Getting-Proxychains-ng-to-work-on-MacOS.md
 
 The default proxychains-ng binary in [Homebrew](https://brew.sh) didn't work for me. I found that by removing it and then telling [Homebrew] to compile from source, I was able to run arbitrary applications through a chain of proxies.
 
-```
+```shell
 brew uninstall proxychains-ng
 ```
-```
+```shell
 brew install proxychains-ng -s
 ```
 
